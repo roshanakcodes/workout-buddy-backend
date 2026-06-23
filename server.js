@@ -11,7 +11,7 @@ dns.setServers(["1.1.1.1", "1.0.0.1"]);
 //express app
 const app = express()
 app.use(cors({
-  origin: 'https://workout-buddy-frontend-chi.vercel.app/', 
+  origin: 'https://workout-buddy-frontend-chi.vercel.app', 
   methods: ['GET', 'POST', 'DELETE', 'PATCH'],
   credentials: true
 }));
