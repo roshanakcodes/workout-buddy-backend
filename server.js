@@ -22,7 +22,7 @@ app.use('/api/workouts', workoutRoutes)
 mongoose.connect(process.env.MONG_URL)
   .then(()=>{
     // listening for requests
-    app.listen(process.env.PORT, ()=> {
+    app.listen(process.env.PORT || 4000, ()=> {
        console.log('Connected to DB & Listening to port 4000 !!')
     })
   })
