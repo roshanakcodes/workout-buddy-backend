@@ -10,16 +10,15 @@ dns.setServers(["1.1.1.1", "1.0.0.1"]);
 
 //express app
 const app = express()
-app.use(express.json())
-const workoutRoutes = require('./routes/workouts')
-//middleware
 app.use(cors({
-  origin: 'https://workout-buddy-frontend-chi.vercel.app',
-  methods: ['GET', 'POST', 'DELETE', 'PATCH', 'PUT'],
-  allowedHeaders: ['Content-Type', 'Authorization'],
+  origin: 'https://workout-buddy-frontend-chi.vercel.app', 
+  methods: ['GET', 'POST', 'DELETE', 'PATCH'],
   credentials: true
 }));
 
+app.use(express.json())
+const workoutRoutes = require('./routes/workouts')
+//middleware
 app.use((req,res, next) =>{
      console.log(req.path, req.method)
      next()
