@@ -14,8 +14,12 @@ app.use(express.json())
 const workoutRoutes = require('./routes/workouts')
 //middleware
 app.use(cors({
-  origin: 'https://workout-buddy-frontend-chi.vercel.app' // Paste your exact Vercel link here!
+  origin: 'https://workout-buddy-frontend-chi.vercel.app',
+  methods: ['GET', 'POST', 'DELETE', 'PATCH', 'PUT'],
+  allowedHeaders: ['Content-Type', 'Authorization'],
+  credentials: true
 }));
+
 app.use((req,res, next) =>{
      console.log(req.path, req.method)
      next()
