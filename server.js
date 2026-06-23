@@ -15,7 +15,7 @@ app.use(cors({
   methods: ['GET', 'POST', 'DELETE', 'PATCH'],
   credentials: true
 }));
-
+app.options('*', cors());
 app.use(express.json())
 const workoutRoutes = require('./routes/workouts')
 //middleware
